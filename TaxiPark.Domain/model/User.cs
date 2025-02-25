@@ -26,11 +26,5 @@ class User
     //Телефон пользователя
     //</summary>
     public string? PhoneNumber { get; set; }
-
-    public int? Phone()
-    {
-
-        return 0;
-    }
 }
 
