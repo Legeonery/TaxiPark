@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TaxiPark.Domain.model;
-//Класс связывающий водителей и ТС
-class DriverCar
+namespace TaxiPark.Domain.Model;
+///<summary>
+///Класс связывающий водителей и ТС
+///</summary>
+public class DriverCar
 {
     /// <summary>
     /// Идентификатор связи
@@ -18,7 +20,7 @@ class DriverCar
     /// <summary>
     /// Навигейшен ТС
     /// </summary>
-    //public virtual Car? Car { get; set; }
+    ///public virtual Car? Car { get; set; }
 
     /// <summary>
     /// Идентификатор водителя
@@ -28,6 +30,6 @@ class DriverCar
     /// <summary>
     /// Навигейшен водителя
     /// </summary>
-    //public virtual Driver? Driver { get; set; }
+    ///public virtual Driver? Driver { get; set; }
 }
 

@@ -1,10 +1,10 @@
-﻿using System.Xml.Linq;
-using TaxiPark.Domain.Data;
-using TaxiPark.Domain.model;
-using TaxiPark.Domain.services;
+﻿using TaxiPark.Domain.Data;
+using TaxiPark.Domain.Model;
 
 namespace TaxiPark.Domain.Services.InMemory;
-
+/// <summary>
+/// Имплементация репозитория для Водителей, которая хранит коллекцию в оперативной памяти 
+/// </summary>
 public class DriverInMemoryRepository : IDriverRepository
 {
     private List<Driver> _drivers;
@@ -12,6 +12,9 @@ public class DriverInMemoryRepository : IDriverRepository
     private List<DriverCar> _driverCars;
     private List<Trip> _trips;
 
+    /// <summary>
+    /// Конструктор репозитория
+    /// </summary>
     public DriverInMemoryRepository()
     {
         _drivers = DataSeeder.Drivers;
@@ -20,12 +23,14 @@ public class DriverInMemoryRepository : IDriverRepository
         _trips = DataSeeder.Trips;
     }
 
+    /// <inheritdoc/>
     public Task<Driver> Add(Driver entity)
     {
         _drivers.Add(entity);
         return Task.FromResult(entity);
     }
-
+    
+    /// <inheritdoc/>
     public async Task<bool> Delete(int key)
     {
         var driver = await Get(key);
@@ -36,13 +41,30 @@ public class DriverInMemoryRepository : IDriverRepository
         }
         return false;
     }
+    /// <inheritdoc/>
+    public async Task<Driver> Update(Driver entity)
+    {
+        try
+        {
+            await Delete(entity.Id);
+            await Add(entity);
+        }
+        catch
+        {
+            return null!;
+        }
+        return entity;
+    }
 
+    /// <inheritdoc/>
     public Task<Driver?> Get(int key) =>
         Task.FromResult(_drivers.FirstOrDefault(d => d.Id == key));
 
+    /// <inheritdoc/>
     public Task<IList<Driver>> GetAll() =>
         Task.FromResult((IList<Driver>)_drivers);
 
+    /// <inheritdoc/>
     public Task<(Driver driver, Car car)?> GetDriverWithCar(int driverId)
     {
         var driverCar = _driverCars.FirstOrDefault(dc => dc.DriverId == driverId);
@@ -51,9 +73,12 @@ public class DriverInMemoryRepository : IDriverRepository
         var driver = _drivers.FirstOrDefault(d => d.Id == driverId);
         var car = _cars.FirstOrDefault(c => c.Id == driverCar.CarId);
 
-        return Task.FromResult(driver != null && car != null ? (driver, car) : null);
+        return Task.FromResult<(Driver, Car)?>(
+            driver != null && car != null ? (driver, car) : null
+        );
     }
 
+    /// <inheritdoc/>
     public Task<IList<(Driver driver, int tripCount)>> GetTop5DriversByTripCount()
     {
         var topDrivers = _trips
@@ -66,6 +91,7 @@ public class DriverInMemoryRepository : IDriverRepository
         return Task.FromResult((IList<(Driver, int)>)topDrivers);
     }
 
+    /// <inheritdoc/>
     public Task<IList<(Driver driver, int tripCount, double avgTravelTime, int maxTravelTime)>> GetDriverTripStatistics()
     {
         var statistics = _trips

@@ -1,6 +1,6 @@
-﻿using TaxiPark.Domain.model;
+﻿using TaxiPark.Domain.Model;
 
-namespace TaxiPark.Domain.services;
+namespace TaxiPark.Domain.Services;
 /// <summary>
 /// Репозиторий для работы с водителями.
 /// </summary>

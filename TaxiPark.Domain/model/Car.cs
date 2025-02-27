@@ -1,28 +1,31 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TaxiPark.Domain.model;
-class Car
+namespace TaxiPark.Domain.Model;
+///<summary>
+///Класс ТС
+///</summary>
+public class Car
 {
-    //<summary>
-    //Индификатор ТС
-    //</summary>
+    ///<summary>
+    ///Индификатор ТС
+    ///</summary>
     [Key]
     public required int Id { get; set; }
-    //<summary>
-    //Гос. номер ТС
-    //</summary>
+    ///<summary>
+    ///Гос. номер ТС
+    ///</summary>
     public required string? StateNumber { get; set; }
-    //<summary>
-    //Модель ТС
-    //</summary>
+    ///<summary>
+    ///Модель ТС
+    ///</summary>
     public string? Model { get; set; }
-    //<summary>
-    //Основной цвет ТС
-    //</summary>
+    ///<summary>
+    ///Основной цвет ТС
+    ///</summary>
     public string? Color { get; set; }
-    //<summary>
-    //Год выпуска ТС
-    //</summary>
+    ///<summary>
+    ///Год выпуска ТС
+    ///</summary>
     public int? YearOfProduction { get; set; }
 }
 

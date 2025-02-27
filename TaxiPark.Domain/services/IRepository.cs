@@ -1,4 +1,9 @@
-﻿namespace TaxiPark.Domain.services;
+﻿namespace TaxiPark.Domain.Services;
+/// <summary>
+/// Обобщенный интерфейс для операций над коллекциями доменных сущностей
+/// </summary>
+/// <typeparam name="TEntity">Тип доменной сущности</typeparam>
+/// <typeparam name="TKey">Тип ключевого поля сущности</typeparam>
 public interface IRepository<TEntity, TKey>
     where TEntity : class
     where TKey : struct

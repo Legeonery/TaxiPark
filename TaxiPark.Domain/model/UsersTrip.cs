@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TaxiPark.Domain.model;
-//Класс связывающий пользователей и поездки
-class UsersTrip
+namespace TaxiPark.Domain.Model;
+///<summary>
+///Класс связывающий пользователей и поездки
+///</summary>
+public class UsersTrip
 {
     /// <summary>
     /// Идентификатор связи
@@ -18,7 +20,7 @@ class UsersTrip
     /// <summary>
     /// Навигейшен юзера
     /// </summary>
-    //public virtual User? User { get; set; }
+    ///public virtual User? User { get; set; }
 
     /// <summary>
     /// Идентификатор поездки

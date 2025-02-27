@@ -1,4 +1,4 @@
-﻿using TaxiPark.Domain.model;
+﻿using TaxiPark.Domain.Model;
 
 namespace TaxiPark.Domain.Data;
 
@@ -12,11 +12,11 @@ public static class DataSeeder
     /// </summary>
     public static readonly List<Car> Cars =
     [
-        new() { Id = 1, Model = "Camry", YearOfProduction = 2020 },
-        new() { Id = 2, Model = "Sonata", YearOfProduction = 2019 },
-        new() { Id = 3, Model = "Focus", YearOfProduction = 2018 },
-        new() { Id = 4, Model = "Optima", YearOfProduction = 2021 },
-        new() { Id = 5, Model = "Passat", YearOfProduction = 2017 }
+        new() { Id = 1, StateNumber = "Р001МТ", Model = "Camry", YearOfProduction = 2020 },
+        new() { Id = 2, StateNumber = "Р002МТ", Model = "Sonata", YearOfProduction = 2019 },
+        new() { Id = 3, StateNumber = "Р003МТ", Model = "Focus", YearOfProduction = 2018 },
+        new() { Id = 4, StateNumber = "Р004МТ", Model = "Optima", YearOfProduction = 2021 },
+        new() { Id = 5, StateNumber = "Р005МТ", Model = "Passat", YearOfProduction = 2017 }
     ];
 
     /// <summary>
