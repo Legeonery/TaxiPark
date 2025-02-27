@@ -18,7 +18,7 @@ class DriverCar
     /// <summary>
     /// Навигейшен ТС
     /// </summary>
-    public virtual Car? Car { get; set; }
+    //public virtual Car? Car { get; set; }
 
     /// <summary>
     /// Идентификатор водителя
@@ -28,6 +28,6 @@ class DriverCar
     /// <summary>
     /// Навигейшен водителя
     /// </summary>
-    public virtual Driver? Driver { get; set; }
+    //public virtual Driver? Driver { get; set; }
 }
 

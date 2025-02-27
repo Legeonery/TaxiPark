@@ -15,7 +15,7 @@ class Car
     //<summary>
     //Модель ТС
     //</summary>
-    public string? Modal { get; set; }
+    public string? Model { get; set; }
     //<summary>
     //Основной цвет ТС
     //</summary>

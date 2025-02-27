@@ -18,7 +18,7 @@ class UsersTrip
     /// <summary>
     /// Навигейшен юзера
     /// </summary>
-    public virtual User? User { get; set; }
+    //public virtual User? User { get; set; }
 
     /// <summary>
     /// Идентификатор поездки
@@ -28,6 +28,6 @@ class UsersTrip
     /// <summary>
     /// Навигейшен поездки
     /// </summary>
-    public virtual Trip? Trip { get; set; }
+    //public virtual Trip? Trip { get; set; }
 }
 

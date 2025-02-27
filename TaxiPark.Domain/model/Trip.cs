@@ -35,6 +35,6 @@ class Trip
     /// <summary>
     /// Навигейшен ТС
     /// </summary>
-    public virtual Car? Car { get; set; }
+    //public virtual Car? Car { get; set; }
 }
 
