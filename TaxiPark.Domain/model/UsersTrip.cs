@@ -30,6 +30,6 @@ public class UsersTrip
     /// <summary>
     /// Навигейшен поездки
     /// </summary>
-    //public virtual Trip? Trip { get; set; }
+    ///public virtual Trip? Trip { get; set; }
 }
 
